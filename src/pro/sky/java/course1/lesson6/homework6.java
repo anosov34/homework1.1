@@ -27,57 +27,64 @@ public class homework6 {
 
     private static void task3() {
         String fullName = "Ivanov Ivan Ivanovich";
-        String fullNameWithZippedPoint = fullName.replace( ' ', ';');
+        String fullNameWithZippedPoint = fullName.replace(' ', ';');
         System.out.println("Данные ФИО сотрудника для административного отдела – " + fullNameWithZippedPoint);
     }
 
     private static void task4() {
         String fullName = "Иванов Семён Семёнович";
-        String fullNameWithoutE = fullName.replace( 'ё', 'е');
+        String fullNameWithoutE = fullName.replace('ё', 'е');
         System.out.println("Данные ФИО сотрудника – " + fullNameWithoutE);
     }
 
     private static void task5() {
         String fullName = "Ivanov Ivan Ivanovich";
-        int firstIndex = fullName.indexOf (" ");
+        int firstIndex = fullName.indexOf(" ");
         int lastIndex = fullName.lastIndexOf(" ");
-        String resultLastName = fullName.substring(0,firstIndex);
-        String resultFirstName = fullName.substring(firstIndex + 1,lastIndex);
+        String resultLastName = fullName.substring(0, firstIndex);
+        String resultFirstName = fullName.substring(firstIndex + 1, lastIndex);
         String resultMiddleName = fullName.substring(lastIndex + 1);
         System.out.println("Имя сотрудника – " + resultFirstName);
         System.out.println("Фамилия сотрудника – " + resultLastName);
         System.out.println("Отчество сотрудника - " + resultMiddleName);
 
-        }
+    }
 
     private static void task6() {
         String fullName = "ivanov ivan ivanovich";
-        char [] chars = fullName.toCharArray();
+        char[] chars = fullName.toCharArray();
         int firstIndex = 0;
         int secondIndex = fullName.indexOf(" ") + 1;
         int thirdIndex = fullName.lastIndexOf(" ") + 1;
-        StringBuilder resultFullName = new StringBuilder();
-        for (int i = 0; i < chars.length; i++) {
-           if (i == firstIndex || i == secondIndex || i == thirdIndex) {
-               resultFullName.append(Character.toUpperCase(chars[i]));
-           } else {
-               resultFullName.append(chars[i]);
-           }
-
+        StringBuilder resultFullName = new StringBuilder(fullName);
+        StringBuilder sb = new StringBuilder(resultFullName);
+        sb.setCharAt(firstIndex, Character.toUpperCase(sb.charAt(firstIndex)));
+        sb.setCharAt(secondIndex, Character.toUpperCase(sb.charAt(secondIndex)));
+        sb.setCharAt(thirdIndex, Character.toUpperCase(sb.charAt(thirdIndex)));
+        System.out.println(sb);
         }
-        System.out.println(resultFullName);
-    }
+//        for (int i = 0; i < chars.length; i++) {
+//            if (i == firstIndex || i == secondIndex || i == thirdIndex) {
+//               resultFullName.append(Character.toUpperCase(chars[i]));
+//           } else {
+//               resultFullName.append(chars[i]);
+//           }
+//
+//        }
 
-    private static void task7() {
-        String firstNumbers = "135";
-        String secondNumbers = "246";
-        StringBuilder numbers = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            numbers.append(firstNumbers.charAt(i));
-            numbers.append (secondNumbers.charAt(i));
+
+
+
+        private static void task7() {
+            String firstNumbers = "135";
+            String secondNumbers = "246";
+            StringBuilder numbers = new StringBuilder();
+            for (int i = 0; i < 3; i++) {
+                numbers.append(firstNumbers.charAt(i));
+                numbers.append(secondNumbers.charAt(i));
+            }
+            System.out.println(numbers);
         }
-        System.out.println(numbers);
-    }
+
+
 }
-
-
