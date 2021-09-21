@@ -21,46 +21,36 @@ public class Homework5Massive {
     }
 
     public static void task1 () {
-        Random random = new Random();
         int[] expenses = generateRandomArray();
         int sum = 0;
-        for (int daily = 0; daily < expenses.length; daily++) {
-            expenses[daily] = random.nextInt(100_000) + 100_000;
-            sum += expenses[daily];
+        for (int daily : expenses) {
+            sum += daily;
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
     }
 
     public static void task2() {
-        java.util.Random random = new java.util.Random();
-        int[] arr = generateRandomArray();
-        int maxArr = arr[0];
-        int minArr = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-            if (arr[i] < minArr) {
-                minArr = arr[i];
+        int[] expenses = generateRandomArray();
+        int maxArr = 0;
+        int minArr = expenses[0];
+        for (int expense : expenses) {
+            if (maxArr < expense) {
+                maxArr = expense;
             }
-        }
-        for (int index = 0; index < arr.length; index++) {
-            arr[index] = random.nextInt(100_000) + 100_000;
-            if (arr[index] > maxArr) {
-                maxArr = arr[index];
+            if (expense < minArr) {
+                minArr = expense;
             }
         }
         System.out.println("Максимальная сумма трат за месяц составила " + maxArr + " рублей. Минимальная сумма трат за месяц составила " + minArr + " рублей.");
-
     }
 
     public static void task3() {
-        java.util.Random random = new java.util.Random();
         int[] arr = generateRandomArray();
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = random.nextInt(100_000) + 100_000;
-            sum += arr[i];
-        }
+        for (int i : arr) {
+            sum += i;
+      }
         double summary = sum;
         double averageExpenses = summary / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " +  averageExpenses + " рублей");
