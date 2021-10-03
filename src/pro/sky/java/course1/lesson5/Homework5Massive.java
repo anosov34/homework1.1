@@ -51,8 +51,7 @@ public class Homework5Massive {
         for (int i : arr) {
             sum += i;
       }
-        double summary = sum;
-        double averageExpenses = summary / arr.length;
+        double averageExpenses = (double) sum / arr.length;
         System.out.println("Средняя сумма трат за месяц составила " +  averageExpenses + " рублей");
     }
 
