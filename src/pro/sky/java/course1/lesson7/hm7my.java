@@ -63,7 +63,7 @@ public class hm7my {
         return day;
     }
 
-    // Task4
+    /// Task4
     public static void checkDoubles(String doubles) {
         char[] chars = doubles.toCharArray();
         for (int i = 1; i < chars.length; i++) {
