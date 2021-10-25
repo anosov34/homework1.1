@@ -8,8 +8,8 @@ public class hm7my {
 
         // Task2
         int yearOfDevice = 2020;
-        int OsOfDevice = 1;
-        defineVersion(OsOfDevice, yearOfDevice);
+        int osOfDevice = 1;
+        defineVersion(osOfDevice, yearOfDevice);
 
         // Task3
         int days = 60;
