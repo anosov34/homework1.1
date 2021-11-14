@@ -13,8 +13,7 @@ public class Employee {
             this.fullName = fullName;
             this.department = department;
             this.salary = salary;
-            id = counter;
-            counter++;
+            id = counter++;
         }
 
         public String getFullName() {

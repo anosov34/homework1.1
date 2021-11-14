@@ -19,9 +19,9 @@ public class Main {
                 getAllEmployeesInf();
                 System.out.println("Общая сумма затрат на ЗП: " + calculateSalary());
                 System.out.println("Средняя ЗП " + calculateAverageSalary());
-                System.out.println("Максимальная ЗП у " + employees[findMaxSalary()]);
-                System.out.println("Минимальная ЗП у " + employees[findMinSalary()]);
-                getEmployeesFullName();
+                System.out.println("Максимальная ЗП у " + findMaxSalary());
+                System.out.println("Минимальная ЗП у " + findMinSalary());
+                printEmployeesFullName();
         }
         public static int calculateSalary() {
                 int result = 0;
@@ -30,32 +30,35 @@ public class Main {
                 }
                 return result;
         }
-        public static int findMinSalary() {
+        public static Employee findMinSalary() {
                 int indexOfMinSalary = 0;
                 for (int i = 1; i < employees.length; i++) {
-                        if (employees[i].getSalary() < employees[0].getSalary()) {
+                        if (employees[i].getSalary() < employees[indexOfMinSalary].getSalary()) {
                                 indexOfMinSalary = i;
                         }
                 }
-                return indexOfMinSalary;
+                return employees[indexOfMinSalary];
         }
 
-        public static int findMaxSalary() {
+        public static Employee findMaxSalary() {
                 int indexOfMaxSalary = 0;
                 for (int i = 1; i < employees.length; i++) {
                         if (employees[i].getSalary() > employees[indexOfMaxSalary].getSalary()) {
                                 indexOfMaxSalary = i;
                         }
                 }
-                return indexOfMaxSalary;
+                return employees[indexOfMaxSalary];
         }
 
         public static int calculateAverageSalary() {
                 return calculateSalary() / employees.length;
 
         }
-        public static void getEmployeesFullName() {
+        public static void printEmployeesFullName() {
                 for (Employee employee : employees) {
+                        if (employee == null) {
+                                continue;
+                        }
                         System.out.println(employee.getFullName());
                 }
         }
