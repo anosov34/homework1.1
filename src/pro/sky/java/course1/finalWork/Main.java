@@ -67,7 +67,7 @@ public class Main {
 
     public static void getAllEmployeesInf() {
         for (Employee employee : employees) {
-            System.out.println("№ " + employee.getId() + " " + employee);
+            System.out.println("№ " + employee);
         }
     }
 }
