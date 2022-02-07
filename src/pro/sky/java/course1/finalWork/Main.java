@@ -16,11 +16,11 @@ public class Main {
         employees[8] = new Employee("Khrushcev B.R.", 2, 33_000);
         employees[9] = new Employee("Navalniy G.M.", 1, 29_000);
 
-        getAllEmployeesInf();
+        printAllEmployeesInf();
         System.out.println("Общая сумма затрат на ЗП: " + calculateSalary());
         System.out.println("Средняя ЗП " + calculateAverageSalary());
         System.out.println("Максимальная ЗП у " + findMaxSalary());
-        System.out.println("Минимальная ЗП у " + findMinSalary());
+        System.out.println("Минимальная ЗП у   " + findMinSalary());
         printEmployeesFullName();
     }
 
@@ -58,14 +58,13 @@ public class Main {
 
     public static void printEmployeesFullName() {
         for (Employee employee : employees) {
-            if (employee == null) {
-                continue;
+            if (employee != null) {
+                System.out.println(employee.getFullName());
             }
-            System.out.println(employee.getFullName());
         }
     }
 
-    public static void getAllEmployeesInf() {
+    public static void printAllEmployeesInf() {
         for (Employee employee : employees) {
             System.out.println("№ " + employee);
         }
